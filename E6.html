@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>E 6</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/E8.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav> 
+    <br>
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                Calculadora de IMC
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="sexo">Homen</label>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="tipoSe('Homen')">Homen</a></li>
+                        <li><a class="dropdown-item" onclick="tipoSe('Mulher')">Mulher</a></li>
+                    </ul>
+                    <label class="input-group-text">Altura</label>
+                    <input type="text" class="form-control" id="altu">
+                    <button class="btn btn-outline-secondary" type="button" onclick="calcular()">Calcular</button>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text" id="tipoconv">IMC</span>
+                    <span class="input-group-text"> : </span>
+                    <span class="input-group-text" id="resul"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var val = 0;
+    var tipo = "Homen";
+    var labelT = document.getElementById('sexo');
+    var resul = document.getElementById('resul');
+    function tipoSe(t) {
+        if (t == "Homen") {
+            labelT.innerHTML = "Homen";
+            tipo = "Homen";
+        } else {
+            labelT.innerHTML = "Mulher";
+            tipo = "Mulher";
+        }
+    }
+
+    function calcular() {
+        val = parseInt(document.getElementById('altu').value);
+        if (tipo == "Homen") {
+            resul.innerText = "" + (72.7 * val) - 58;
+        } else {
+            resul.innerText = "" + (62.1 * val) - 44.7;
+        }
+    }
+</script>
+
+</html>

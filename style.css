@@ -1,0 +1,11 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
+    grid-auto-rows: auto; /* Altura automática para as linhas */
+    gap: 1rem; /* Define um espaçamento entre os cards */
+  }
+  
+  .card {
+    max-width: 18rem;
+    margin: auto; /* Alinha os cards horizontalmente */
+  }
